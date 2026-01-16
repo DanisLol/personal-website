@@ -1,0 +1,780 @@
+/* Comments */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300;1,300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* creates consistent spacing */
+}
+
+body {    
+    font-family: "Google Sans Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+html{
+    scroll-behavior: smooth; /*make going to different sections smooth */
+
+
+}
+
+p{
+    color: rgb(85, 85, 85);
+}
+
+/* transition */
+
+a, .btn{
+    transition: all 300ms ease;
+}
+
+
+/*desktop nav*/
+.desktop-nav{
+    display: flex;
+    position: fixed; /* Keeps it in place */
+    left: 50%;
+    z-index: 1000;   /* Ensures it's on top of other content */
+    gap: 2rem;
+    top: 1rem;
+    transform: translateX(-50%);
+    padding: 1rem 3rem;
+
+    justify-content: space-between;
+    align-items: center;
+    min-width: 1000px;
+    height: 10px;
+    width: fit-content;     /* Full width */
+    
+    border-radius: 20px;
+    
+  /* Add background, padding, etc. */
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+
+
+
+
+
+/* flexbox */
+nav, .nav-links{
+    display: flex;
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh; /*take 17% of the whole screen */
+}
+
+.nav-links{
+    gap: 1.5rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    text-decoration-color: rgb(181, 181, 181)
+}
+
+.logo{
+    font-size: 2rem;
+}
+
+.logo:hover{
+    cursor: default;
+}
+
+/* hamburger menu */
+#hamburger-nav {
+    display:none;
+}
+
+.hamburger-menu{
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li{
+    list-style: none;
+}
+
+.menu-links.open{
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px, 5px)
+}
+
+/* second child*/
+.hamburger-icon.open span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px, -5px)
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+.hamburger-icon span:first-child{
+    opacity: 1;
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+/* sections*/
+/* section{
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content
+} */
+
+section {
+    /* 1. Remove strict height. Use min-height so it can grow. */
+    min-height: 100vh; 
+    height: auto; 
+    
+    /* 2. Add vertical spacing so sections don't touch */
+    padding-top: 4vh;
+    padding-bottom: 4rem; /* Adds breathing room at the bottom */
+    margin-bottom: 4rem; /* Adds actual empty space between sections */
+    
+    /* 3. Keep your side margins (but consider reducing for mobile later) */
+    margin: 0 10rem; 
+    box-sizing: border-box;
+}
+
+
+
+.section-container{
+    display: flex;
+}
+
+/* Profile Section */
+
+#profile{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+}
+
+.typewriter{
+    width: max-content;
+    
+}
+
+/*typing effect*/
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 2.5s steps(20, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+
+
+
+
+
+.enlarge{
+    width: auto;
+    height: auto;
+}
+
+.section__pic-container{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.profile__section__text{
+    align-self: center;
+    text-align: center;
+    display: flex;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p{
+    font-weight: 600;
+}
+
+.section__text__p1{
+    text-align: center;
+}
+
+.section__text__p2{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-container{
+    display: flex;
+    justify-content: center; 
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/* Icons */
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* Buttons */
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem; 
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-1, .btn-color-2{
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover, .btn-color-2:hover{
+    cursor: pointer;
+}
+
+.btn-color-1, .btn-color-2:hover{
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-1:hover{
+    background: rgb(0, 0, 0)
+}
+
+.btn-color-2 {
+    background: none;
+}
+
+.btn-color-2:hover{
+    border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container{
+    gap: 1rem;
+}
+
+/* About Section */
+#about{
+    position: relative;
+}
+
+.about-containers {
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container{
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-containers, .about-details-container{
+    display: flex
+}
+
+.about-pic{
+    border-radius: 2rem;
+}
+
+.arrow{
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.details-container{
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+
+.section-container{
+    gap: 4rem;
+    height: 80%;
+}
+
+.section__pic-container{
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+/* Experience */
+
+/* #experience{
+    position: relative;
+}
+
+.experience-sub-title {
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.experience-details-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-container{
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+}
+
+article{
+    display: flex;
+    width: 10rem;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+article .icon{
+    cursor: default;
+}
+ */
+
+
+ /* Container Spacing */
+#experience {
+    height: auto;
+    padding: 4rem 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: sans-serif; /* Or your preferred font */
+}
+
+.experience-header {
+    margin-bottom: 4rem;
+}
+
+.experience-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.experience-header p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* TIMELINE CONTAINER */
+.timeline {
+    position: relative; /* Needed for the vertical line positioning */
+    max-width: 100%;
+}
+
+/* The Vertical Line */
+.timeline-line {
+    position: absolute;
+    left: 30%; /* Adjusts where the line sits horizontally */
+    top: 12px;
+    bottom: 0;
+    width: 2px;
+    background-color: rgb(192, 192, 192); 
+    z-index: 1;
+}
+
+/* INDIVIDUAL ITEM WRAPPER */
+.timeline-item {
+    display: flex; /* Puts Date | Dot | Content side-by-side */
+    margin-bottom: 4rem; /* Space between jobs */
+    position: relative;
+    z-index: 2; /* Ensures content sits above the line */
+}
+
+/* 1. LEFT COLUMN: Date */
+.timeline-date {
+    width: 30%; /* Matches the 'left' value of the line */
+    padding-right: 3rem; /* Space between date and dot */
+    text-align: right;
+    color: #888;
+    font-size: 1.1rem;
+    padding-top: 0.2rem; /* Aligns text with the dot */
+}
+
+/* 2. MIDDLE COLUMN: The Dot */
+.timeline-marker {
+    display: flex;
+    justify-content: center;
+    width: 0; /* It shouldn't take up space in the flow */
+    position: relative;
+    flex-shrink: 0;
+}
+
+.timeline-dot { /* width = 19 + height*/
+    box-sizing: content-box;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #e5e5e5; /* The inner gray color */
+    border: 4px solid white; /* Creates the "gap" effect around the dot */
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #e5e5e5; /* Optional: adds a subtle outer ring */
+    /* Centers the dot on the line */
+    position: relative;
+    z-index: 2;
+    /* background-clip: padding-box; */
+}
+
+/* 3. RIGHT COLUMN: Content */
+.timeline-content {
+    flex: 1; /* Takes up the rest of the space */
+    padding-left: 3rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.role-desc {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.job-bullets {
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.job-bullets li {
+    margin-bottom: 0.5rem;
+}
+
+/* Tech Stack "Pills" */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-stack span {
+    background-color: #f3f4f6;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+}
+
+/* RESPONSIVE: Stack vertically on mobile phones */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px; /* Move line to far left */
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        padding-left: 45px; /* Make room for the line on the left */
+    }
+
+    .timeline-date {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 0.5rem;
+        padding-right: 0;
+    }
+
+    .timeline-marker {
+        position: absolute;
+        left: 20px; /* Align dot with the new line position */
+        top: 5px;
+    }
+    
+    .timeline-content {
+        padding-left: 0;
+    }
+}
+
+/* Projects */
+
+
+#projects{
+    position: relative;
+}
+
+/* .experience-details-container{
+    width: 80vh;
+} */
+
+.color-container{
+    border-color: rgb(163, 163, 163);
+    background: rgb(250, 250, 250);
+}
+
+.project-img{
+    border-radius: 2rem;
+    width: 50%;
+    height: auto;
+}
+
+.project-card-link:hover{
+    cursor:pointer
+}
+
+.details-container{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.details-container:hover{
+    
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2)
+
+}
+
+.project-title{
+    margin: 1rem;
+    color: black;
+}
+
+.project-btn{
+    color: black;
+    border-color: rgb(163, 163, 163);
+}
+
+
+/*contact*/
+/* #contact{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 70vh;
+    padding-left: 5%;
+}
+
+.contact-info-upper-container{
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: rgb(250. 250, 250);
+    margin: 2rem 0;
+    padding: 0.5rem;
+}
+
+.contact-info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-container {
+    font-size: larger;
+}
+
+.contact-icon{
+    cursor: default;
+}
+
+ */
+
+
+#contact {
+    display: flex;
+    /* Changes direction to Row so text and form are side-by-side */
+    flex-direction: row; 
+    justify-content: space-between; /* Pushes text left and form right */
+    align-items: flex-start; /* Aligns them to the top */
+    padding: 4rem 10%; /* Adds side spacing so it's not touching screen edges */
+    gap: 4rem; /* Space between the text and the form */
+    height: auto;
+    min-height: 70vh;
+}
+
+/* LEFT SIDE: Text Styling */
+.contact-text-container {
+    flex: 1; /* Takes up equal available space */
+    max-width: 50%;
+}
+
+.contact-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.contact-subtext {
+    font-size: 1.2rem;
+    color: rgb(85, 85, 85); /* Gray color from the image */
+    line-height: 1.6;
+}
+
+/* RIGHT SIDE: Form Styling */
+.contact-form-container {
+    display: flex;
+    flex-direction: column; /* Stacks inputs vertically */
+    gap: 1.5rem; /* Space between inputs */
+    flex: 1;
+    max-width: 600px; /* Prevents form from getting too wide */
+}
+
+/* Input Fields & Textarea */
+.contact-input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    border: 1px solid rgb(200, 200, 200);
+    background-color: rgb(250, 250, 250); /* Light gray background */
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Specific styling for the message box */
+.contact-textarea {
+    height: 150px; /* Makes the message box taller */
+    resize: vertical; /* Allows user to resize vertically only */
+}
+
+/* Button Styling */
+.contact-btn {
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content; /* Makes button only as wide as the text */
+    transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: rgb(50, 50, 50); /* Dark gray on hover */
+}
+
+/* Mobile Responsiveness: Stacks them on small screens */
+@media (max-width: 768px) {
+    #contact {
+        flex-direction: column;
+        padding: 2rem 5%;
+    }
+    .contact-text-container, .contact-form-container {
+        max-width: 100%;
+    }
+}

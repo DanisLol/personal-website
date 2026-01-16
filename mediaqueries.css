@@ -1,0 +1,10 @@
+
+
+@media screen and (max-width: 1200px){
+    #desktop-nav { /* when screen size lower than 12000, make desktop view disappear*/
+        display: none;
+    }
+    #hamburger-nav{
+        display: flex;
+    }
+}
