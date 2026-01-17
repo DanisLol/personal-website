@@ -2,4 +2,4 @@
 
 DHTML 
 
-- Will be updated with react.js very soon
+- whole cold will be updated soon
