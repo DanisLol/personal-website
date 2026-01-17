@@ -2,4 +2,4 @@
 
 DHTML 
 
-- whole cold will be updated soon
+- all files will be updated soon
